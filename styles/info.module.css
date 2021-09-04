@@ -1,0 +1,15 @@
+.video {
+    @apply w-full mt-20
+}
+.title {
+    @apply py-4 text-4xl font-bold text-cPink
+}
+.tags {
+    @apply flex py-7 
+}
+.tag {
+    @apply p-1 rounded-sm border-cPink border-2 mr-4 cursor-pointer 
+}
+.sub {
+    @apply text-cWhile opacity-70
+}

@@ -1,0 +1,43 @@
+    .header {
+        @apply mt-9 px-9 flex font-normal justify-between items-center
+    }
+    .logo {
+        @apply font-Aubrey text-5xl 
+    }
+    .nav {
+        @apply flex mr-14 items-center
+    }
+    .navItem {
+       @apply hover:text-cPink 
+       cursor-pointer text-2xl relative
+
+    }
+    .search {
+        @apply flex mr-6 bg-search px-3 py-2 items-center rounded-md
+    }
+    .btnSignUp {
+        @apply bg-cPink py-3 px-7 text-lg rounded-md
+    }
+    .btnSignIn {
+        @apply border-2 border-cPink border-solid rounded-md py-3 px-7 text-lg
+    }
+    .menu {
+        @apply rounded-md absolute -bottom-48 grid
+        transition-all duration-500
+         grid-cols-3 gap-x-4 gap-y-2 
+         bg-cWhile text-search w-80 z-10 p-2 mx-auto
+         opacity-0 invisible
+        
+    }
+    .menu2 {
+        @apply rounded-md absolute -bottom-32 grid
+        transition-all duration-500 
+         grid-cols-1 gap-x-4 gap-y-2 
+         bg-cWhile text-search z-10 p-2 mx-auto
+         opacity-0 invisible
+        
+    }
+    .menuItem {
+        @apply text-sm hover:text-cPink block
+    }
+    
