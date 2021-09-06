@@ -1,7 +1,7 @@
  
 
  .title {
-     @apply absolute bottom-0 right-0 left-0 px-20 py-8 text-cPink
+     @apply absolute bottom-0 right-0 left-0 px-20 py-8 
      
  }
  .item {

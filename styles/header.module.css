@@ -1,5 +1,8 @@
     .header {
-        @apply mt-9 px-9 flex font-normal justify-between items-center
+        @apply  px-9 py-5 flex font-normal justify-between top-0
+         items-center fixed border-b-2 border-gray-900
+          z-30 w-full transition-all duration-300 ease-in-out
+          
     }
     .logo {
         @apply font-Aubrey text-5xl 
@@ -8,36 +11,43 @@
         @apply flex mr-14 items-center
     }
     .navItem {
-       @apply hover:text-cPink 
-       cursor-pointer text-2xl relative
+       @apply 
+       cursor-pointer text-2xl relative hover:border-maroon hover:border-b-2 
 
     }
     .search {
-        @apply flex mr-6 bg-search px-3 py-2 items-center rounded-md
+        @apply flex mr-6  bg-input text-linen  px-3 py-0 items-center rounded-md 
     }
     .btnSignUp {
-        @apply bg-cPink py-3 px-7 text-lg rounded-md
+        @apply  py-2 px-5 text-lg rounded-md bg-heading text-linen
     }
     .btnSignIn {
-        @apply border-2 border-cPink border-solid rounded-md py-3 px-7 text-lg
+        @apply border-2 border-heading border-solid rounded-md py-2 px-5  text-lg
     }
     .menu {
-        @apply rounded-md absolute -bottom-48 grid
+        @apply rounded-md absolute -bottom-48 grid bg-gray-800 text-white
         transition-all duration-500
          grid-cols-3 gap-x-4 gap-y-2 
-         bg-cWhile text-search w-80 z-10 p-2 mx-auto
+          w-80 z-10 p-2 mx-auto
          opacity-0 invisible
         
     }
     .menu2 {
         @apply rounded-md absolute -bottom-32 grid
-        transition-all duration-500 
+        transition-all duration-500  bg-gray-800 text-white
          grid-cols-1 gap-x-4 gap-y-2 
-         bg-cWhile text-search z-10 p-2 mx-auto
+           z-10 p-2 mx-auto
          opacity-0 invisible
         
     }
+  
     .menuItem {
-        @apply text-sm hover:text-cPink block
+        @apply  block hover:text-maroon text-sm
     }
     
+.headerScroll{
+    @apply  bg-gray-600 text-white
+}
+.bgBl {
+    @apply bg-white text-input
+}

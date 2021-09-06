@@ -13,7 +13,7 @@
   margin: 0;
   
   
-  @apply bg-cBlack text-cWhile font-Roboto;
+  @apply  font-Roboto;
   
   }
 
@@ -31,5 +31,28 @@
 }
 .menu-hover:hover > .menu {
   @apply opacity-100 visible
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  
+  background: #edf2f7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 100vh;
+  border: 3px solid #edf2f7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
 }
 }

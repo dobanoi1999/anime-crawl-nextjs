@@ -9,7 +9,7 @@ interface IProp {
 function Animes({ animes }: IProp) {
   return (
     <section className="icontainer">
-      <Link href="/animes">
+      <Link href="/anime">
         <h2 className={styles.title}>
           <span> All Anime</span>
           <svg

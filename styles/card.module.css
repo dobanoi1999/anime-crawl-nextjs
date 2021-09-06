@@ -1,9 +1,9 @@
 .item {
-    @apply rounded-md overflow-hidden relative shadow-md 
+    @apply rounded-md overflow-hidden relative shadow-cart text-white 
     
 }
 .overLay {
-    @apply z-10 bg-cBlack opacity-0 cursor-pointer  
+    @apply z-10  opacity-0 cursor-pointer   bg-input
     absolute top-0 right-0 bottom-0 left-0 
     flex justify-center items-center
      transition-all duration-500
@@ -11,14 +11,14 @@
     
 }
 .view {
-    @apply absolute top-3 right-3 bg-cPink rounded p-1
+    @apply absolute top-3 right-3  rounded p-1 truncate max-w-1/2 border-maroon border-2 bg-input text-white
 }
 .title {
-    @apply bottom-2 left-2 absolute text-cWhile  truncate w-3/4 z-20
+    @apply bottom-2 left-2 absolute   truncate w-3/4 z-20
 }
 .img {
     @apply top-0 right-0 bottom-0 left-0 object-cover absolute 
 }
 .episode {
-    @apply left-3 top-3 absolute bg-cPink rounded p-1
+    @apply left-3 top-3 absolute  rounded p-1 truncate 
 }

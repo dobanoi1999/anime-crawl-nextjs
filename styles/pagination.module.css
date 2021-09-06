@@ -1,0 +1,11 @@
+.pagination {
+    @apply flex justify-center mt-16
+}
+.page {
+    @apply mr-4 px-4 py-1  text-center
+     border-2 rounded-md cursor-pointer
+     hover:opacity-30 transition-all duration-300 ease-in-out
+}
+.pageActive {
+    @apply border-linen
+}

@@ -5,6 +5,6 @@
     @apply cursor-pointer
       text-4xl font-bold 
       tracking-wide hover:border-b-2
-       hover:border-cPink
+       
        inline-flex items-center
 }

@@ -1,16 +1,34 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/header.module.css";
 function Header() {
+  const [isScroll, setIsScroll] = useState(false);
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsScroll(true);
+    } else {
+      setIsScroll(false);
+    }
+  };
+  useEffect(() => {
+    handleScroll();
+  }, []);
+  process.browser && addEventListener("scroll", handleScroll);
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${isScroll ? styles.headerScroll : ""}`}
+    >
       <p className={styles.logo}>Anime Online.</p>
 
       <div className="flex">
         <ul className={styles.nav}>
           <li className={`${styles.navItem} mr-14 menu-hover`}>
             <p>Thể Loại</p>
-            <ul className={`${styles.menu} menu`}>
+            <ul
+              className={`${styles.menu} ${
+                isScroll ? styles.menuScroll : ""
+              } menu`}
+            >
               <li className={styles.menuItem}>Hành Động</li>
               <li className={styles.menuItem}>Viễn tưởng</li>
               <li className={styles.menuItem}>Lãng Mạn</li>
@@ -32,7 +50,11 @@ function Header() {
           </li>
           <li className={`${styles.navItem} menu-hover`}>
             <p>Bảng Xếp Hạng</p>
-            <ul className={`${styles.menu2} menu`}>
+            <ul
+              className={`${styles.menu2} ${
+                isScroll ? styles.menuScroll : ""
+              } menu`}
+            >
               <Link href="/">
                 <li className={styles.menuItem}>Top Hôm này</li>
               </Link>
@@ -65,14 +87,20 @@ function Header() {
           </svg>
           <input
             placeholder="Search"
-            className=" bg-search  outline-none"
+            className="  bg-input outline-none"
             type="search"
             name="search"
             id=""
           />
         </div>
-        <button className={`${styles.btnSignUp} mr-6`}>Sign up</button>
-        <button className={styles.btnSignIn}>Sign in</button>
+        <button
+          className={`${styles.btnSignUp} mr-6 ${isScroll && styles.bgBl}`}
+        >
+          Sign up
+        </button>
+        <button className={`${styles.btnSignIn} ${isScroll &&  styles.bgBl}`}>
+          Sign in
+        </button>
       </div>
     </header>
   );

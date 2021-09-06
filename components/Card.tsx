@@ -7,7 +7,7 @@ import Link from "next/link";
 function Card({ title, views, image, href, episode }: IAnime) {
   return (
     <div className={`${styles.item}`}>
-      <Link href={`anime${href}`}>
+      <Link passHref href={`anime${href}`}>
         <div className={`${styles.overLay} `}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
