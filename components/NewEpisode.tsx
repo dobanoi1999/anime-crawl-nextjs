@@ -7,6 +7,7 @@ interface IProp {
   episodes: IAnime[];
 }
 function NewEpisode({ episodes }: IProp) {
+  if (episodes.length <= 0) return <p>khong co data</p>;
   return (
     <section className="icontainer">
       <Link href="/new-episode">

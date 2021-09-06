@@ -7,6 +7,7 @@ interface IProp {
   cartoons: IAnime[];
 }
 function Cartoon({ cartoons }: IProp) {
+  if (cartoons.length <= 0) return <p>khong co data</p>;
   return (
     <section className="icontainer">
       <Link href="/cartoons">

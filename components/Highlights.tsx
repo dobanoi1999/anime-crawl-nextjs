@@ -7,6 +7,7 @@ interface IProp {
   highlights: Array<IHighlight>;
 }
 function Highlights({ highlights }: IProp) {
+  if (highlights.length <= 0) return <p>khong co data</p>;
   return (
     <section className="icontainer">
       <div className="mt-24 px-16">

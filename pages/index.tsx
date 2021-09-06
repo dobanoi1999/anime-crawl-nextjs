@@ -9,6 +9,7 @@ interface IProps {
   data: IHomeProps;
 }
 export default function Home({ data }: IProps) {
+  if (!data) return <p>error</p>;
   return (
     <div>
       <Highlights highlights={data.highlights} />
@@ -24,7 +25,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      data,
+      data: data || null,
     },
   };
 };
