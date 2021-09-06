@@ -1,1 +1,1 @@
-export const baseURL = process.env.NODE_ENV === "production" ? "https://e-commerce-dbn.herokuapp.com" : "http://localhost:3000/api/"
+export const baseURL = process.env.NODE_ENV === "production" ? "http://localhost:3000/api/" : "http://localhost:3000/api/"
