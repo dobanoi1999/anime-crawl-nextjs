@@ -83,6 +83,7 @@ function AnimeList({ animes, pagination }: IProps) {
       </ul>
     );
   };
+  if (!animes || !pagination) return <p>error</p>;
   return (
     <>
       <Animes animes={animes} />
@@ -95,8 +96,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return {
     props: {
-      animes: data.animes,
-      pagination: data.pagination,
+      animes: data?.animes || null,
+      pagination: data?.pagination || null,
     },
   };
 };

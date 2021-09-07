@@ -12,11 +12,11 @@ export default function Home({ data }: IProps) {
   if (!data) return <p>error</p>;
   return (
     <div>
-      <Highlights highlights={data.highlights} />
-      <NewEspisode episodes={data.episodes} />
-      <Picked picked={data.picked} />
-      <Animes animes={data.animes} />
-      <Cartoon cartoons={data.cartoons} />
+      <Highlights highlights={data?.highlights || []} />
+      <NewEspisode episodes={data?.episodes || []} />
+      <Picked picked={data?.picked || []} />
+      <Animes animes={data?.animes || []} />
+      <Cartoon cartoons={data?.cartoons || []} />
     </div>
   );
 }

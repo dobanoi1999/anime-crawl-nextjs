@@ -10,6 +10,7 @@ interface IProps {
   episodes: IPagination[];
 }
 function Name({ animeInfo, episodes }: IProps) {
+  if (!animeInfo || !episodes) return <p>error</p>;
   return (
     <section className="icontainer">
       <div>
@@ -52,7 +53,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx: any) => {
   });
 
   return {
-    props: { animeInfo: data?.info, episodes: data?.episodes },
+    props: { animeInfo: data?.info || null, episodes: data?.episodes || null },
   };
 };
 export default Name;
