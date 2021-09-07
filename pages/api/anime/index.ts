@@ -3,9 +3,15 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 const puppeteer = require("puppeteer");
-
+const chromium = require("chrome-aws-lambda");
 export default async function handler(req:NextApiRequest, res:NextApiResponse) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath,
+    headless: chromium.headless,
+    ignoreHTTPSErrors: true,
+  });
   const page = await browser.newPage();
 
   const p = req.query?.page || "";

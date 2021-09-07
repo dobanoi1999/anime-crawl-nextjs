@@ -1,9 +1,15 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 const puppeteer = require("puppeteer");
-
+const chromium = require("chrome-aws-lambda");
 export default async function handler(req, res) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath,
+    headless: chromium.headless,
+    ignoreHTTPSErrors: true,
+  });
   const page = await browser.newPage();
   await page.goto(process.env.URL_CRAWL);
   const data = await page.evaluate(() => {

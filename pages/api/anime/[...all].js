@@ -1,7 +1,14 @@
 const puppeteer = require("puppeteer");
+const chromium = require("chrome-aws-lambda");
 export default async function handler(req, res) {
   const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+  const page = await browser.newPage({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath,
+    headless: chromium.headless,
+    ignoreHTTPSErrors: true,
+  });
 
   const ep = req.query?.all[1] || "";
   await page.goto(`${process.env.URL_CRAWL}/${req.query?.all[0]}/${ep}`);
