@@ -42,6 +42,8 @@ export default async function handler(req, res) {
     }
   });
   browser.close();
-
+  if (typeof data !== "object") {
+    return res.json({});
+  }
   res.json(data);
 }

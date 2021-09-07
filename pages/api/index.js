@@ -93,6 +93,8 @@ export default async function handler(req, res) {
     }
   });
   await browser.close();
-
+  if (typeof data !== "object") {
+    return res.json({});
+  }
   res.json(data);
 }
