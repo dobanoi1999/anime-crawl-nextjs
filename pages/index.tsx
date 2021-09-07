@@ -22,7 +22,14 @@ export default function Home({ data }: IProps) {
 }
 export const getStaticProps = async () => {
   const data = await homeApi.getHomePage();
-
+  console.log(typeof data);
+  if (typeof data === "function") {
+    return {
+      props: {
+        data: null,
+      },
+    };
+  }
   return {
     props: {
       data: data || null,

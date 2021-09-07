@@ -19,8 +19,7 @@
     "query-string": "^7.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-responsive-carousel": "^3.2.21",
-    "chrome-aws-lambda": "^10.0.0"
+    "react-responsive-carousel": "^3.2.21"
   },
   "devDependencies": {
     "@types/react": "^17.0.19",

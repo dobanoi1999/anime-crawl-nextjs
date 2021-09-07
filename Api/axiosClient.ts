@@ -11,14 +11,15 @@ const axiosClient = axios.create({
     paramsSerializer: params => queryString.stringify(params)
 })
 axiosClient.interceptors.response.use(response => {
-    console.log(response)
-    if (response && response.data) return response.data
+    
+    if (response && response.status===200 && response.data) return response.data
  
 }, err => {
     if (err?.response?.status === 401) {
         Storage({type:'clear'})  
     }
-    return err.response
+    console.log(err.response)
+    return {}
 })
 
 export default axiosClient
