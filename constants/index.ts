@@ -1,2 +1,2 @@
 
-export const baseURL = process.env.NODE_ENV === "production" ? "https://anime-crawl-nextjs.vercel.app/api/" : "http://localhost:3000/api/"
+export const baseURL = process.env.NODE_ENV === "production" ? "https://server-crawl.herokuapp.com/api/" : "http://localhost:8888/api/"
