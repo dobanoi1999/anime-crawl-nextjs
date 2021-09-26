@@ -1,53 +1,46 @@
-    .header {
-        @apply  px-9 py-5 flex font-normal justify-between top-0
-         items-center fixed border-b-2 border-gray-900
-          z-30 w-full transition-all duration-300 ease-in-out
-          
-    }
-    .logo {
-        @apply font-Aubrey text-5xl 
-    }
-    .nav {
-        @apply flex mr-14 items-center
-    }
-    .navItem {
-       @apply 
-       cursor-pointer text-2xl relative hover:border-maroon hover:border-b-2 
-
-    }
-    .search {
-        @apply flex mr-6  bg-input text-linen  px-3 py-0 items-center rounded-md 
-    }
-    .btnSignUp {
-        @apply  py-2 px-5 text-lg rounded-md bg-heading text-linen
-    }
-    .btnSignIn {
-        @apply border-2 border-heading border-solid rounded-md py-2 px-5  text-lg
-    }
-    .menu {
-        @apply rounded-md absolute -bottom-48 grid bg-gray-800 text-white
-        transition-all duration-500
-         grid-cols-3 gap-x-4 gap-y-2 
-          w-80 z-10 p-2 mx-auto
-         opacity-0 invisible
-        
-    }
-    .menu2 {
-        @apply rounded-md absolute -bottom-32 grid
+.header {
+    @apply px-9 py-5 flex font-normal justify-between top-0
+         items-center fixed  bg-ctBgHeader
+          z-30 w-full transition-all duration-300 ease-in-out 
+          text-white;
+}
+.logo {
+    @apply text-5xl  cursor-pointer font-Aubrey;
+}
+.nav {
+    @apply flex  items-center;
+}
+.navItem {
+    @apply cursor-pointer text-2xl relative p-3 flex flex-row items-center mr-16;
+}
+.search {
+    @apply flex mr-6     px-3 py-0 items-center rounded-md;
+}
+.btnSignUp {
+    @apply py-2 px-5 text-lg rounded-md;
+}
+.btnSignIn {
+    @apply border-2  border-solid rounded-md py-2 px-5  text-lg;
+}
+.menu {
+    @apply rounded-md absolute -bottom-48 grid bg-ctLight
+        transition-all duration-500 text-ctDark
+        grid-cols-3 gap-x-4 gap-y-2 
+        w-80 z-10 p-2 mx-auto
+         opacity-0 invisible;
+}
+.menu2 {
+    @apply rounded-md absolute -bottom-32 grid
         transition-all duration-500  bg-gray-800 text-white
          grid-cols-1 gap-x-4 gap-y-2 
            z-10 p-2 mx-auto
-         opacity-0 invisible
-        
-    }
-  
-    .menuItem {
-        @apply  block hover:text-maroon text-sm
-    }
-    
-.headerScroll{
-    @apply  bg-gray-600 text-white
+         opacity-0 invisible;
 }
-.bgBl {
-    @apply bg-white text-input
+
+.menuItem {
+    @apply block  text-sm;
+}
+
+.active {
+    @apply bg-ctRed;
 }

@@ -1,34 +1,33 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "../styles/header.module.css";
 function Header() {
-  const [isScroll, setIsScroll] = useState(false);
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setIsScroll(true);
-    } else {
-      setIsScroll(false);
-    }
-  };
-  useEffect(() => {
-    handleScroll();
-  }, []);
-  process.browser && addEventListener("scroll", handleScroll);
   return (
-    <header
-      className={`${styles.header} ${isScroll ? styles.headerScroll : ""}`}
-    >
-      <p className={styles.logo}>Anime Online.</p>
+    <header className={styles.header}>
+      <Link href="/" passHref>
+        <p className={styles.logo}>Anime Online.</p>
+      </Link>
 
       <div className="flex">
         <ul className={styles.nav}>
-          <li className={`${styles.navItem} mr-14 menu-hover`}>
-            <p>Thể Loại</p>
-            <ul
-              className={`${styles.menu} ${
-                isScroll ? styles.menuScroll : ""
-              } menu`}
+          <Link href="/" passHref>
+            <li className={`${styles.navItem} ${styles.active}`}>Trang chủ</li>
+          </Link>
+          <li className={`${styles.navItem}  menu-hover`}>
+            <p>Thể Loại </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
             >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>{" "}
+            <ul className={`${styles.menu} menu`}>
               <li className={styles.menuItem}>Hành Động</li>
               <li className={styles.menuItem}>Viễn tưởng</li>
               <li className={styles.menuItem}>Lãng Mạn</li>
@@ -48,7 +47,7 @@ function Header() {
               <li className={styles.menuItem}>Kịch Tính</li>
             </ul>
           </li>
-          <li className={`${styles.navItem} menu-hover`}>
+          {/* <li className={`${styles.navItem} menu-hover`}>
             <p>Bảng Xếp Hạng</p>
             <ul
               className={`${styles.menu2} ${
@@ -68,12 +67,12 @@ function Header() {
                 <li className={styles.menuItem}>Top năm này</li>
               </Link>
             </ul>
-          </li>
+          </li> */}
         </ul>
         <div className={styles.search}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 mr-1"
+            className="h-6 w-6 mr-1 cursor-pointer"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -85,22 +84,9 @@ function Header() {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
-          <input
-            placeholder="Search"
-            className="  bg-input outline-none"
-            type="search"
-            name="search"
-            id=""
-          />
         </div>
-        <button
-          className={`${styles.btnSignUp} mr-6 ${isScroll && styles.bgBl}`}
-        >
-          Sign up
-        </button>
-        <button className={`${styles.btnSignIn} ${isScroll &&  styles.bgBl}`}>
-          Sign in
-        </button>
+        <button className={styles.btnSignUp}>Sign up</button>
+        <button className={styles.btnSignIn}>Sign in</button>
       </div>
     </header>
   );

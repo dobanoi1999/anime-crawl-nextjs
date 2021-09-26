@@ -3,4 +3,5 @@ module.exports = {
   images: {
     domains: ["s199.imacdn.com", "i.vdicdn.com"],
   },
+  use: ["@svgr/webpack"],
 };

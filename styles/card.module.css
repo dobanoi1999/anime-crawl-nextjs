@@ -1,24 +1,16 @@
 .item {
-    @apply rounded-md overflow-hidden relative shadow-cart text-white 
-    
-}
-.overLay {
-    @apply z-10  opacity-0 cursor-pointer   bg-input
-    absolute top-0 right-0 bottom-0 left-0 
-    flex justify-center items-center
-     transition-all duration-500
-    hover:visible hover:opacity-40
-    
-}
-.view {
-    @apply absolute top-3 right-3  rounded p-1 truncate max-w-1/2 border-maroon border-2 bg-input text-white
-}
-.title {
-    @apply bottom-2 left-2 absolute   truncate w-3/4 z-20
+    @apply rounded-md overflow-hidden relative w-full h-full cursor-pointer;
 }
 .img {
-    @apply top-0 right-0 bottom-0 left-0 object-cover absolute 
+    @apply w-full h-full;
 }
+.view {
+    @apply absolute bottom-2 right-2 rounded bg-ctGrayDark p-1;
+}
+.title {
+    @apply mt-4 p-1 text-lg;
+}
+
 .episode {
-    @apply left-3 top-3 absolute  rounded p-1 truncate 
+    @apply absolute top-2 left-2 bg-ctRed p-1 rounded;
 }

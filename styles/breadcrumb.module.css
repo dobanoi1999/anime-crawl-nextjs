@@ -1,0 +1,9 @@
+.list {
+    @apply flex items-center;
+}
+.breadcrumb {
+    @apply mr-1 capitalize;
+}
+.active {
+    @apply text-ctGrayDark cursor-text;
+}

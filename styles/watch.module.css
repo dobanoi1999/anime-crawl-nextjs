@@ -1,0 +1,26 @@
+.video {
+    @apply mt-10  w-full;
+}
+.title {
+    @apply py-4 text-4xl font-bold;
+}
+.tags {
+    @apply flex py-7;
+}
+.tag {
+    @apply p-1 rounded-md  border-2 mr-4 cursor-pointer;
+}
+.sub {
+    @apply opacity-70;
+}
+.listEp {
+    @apply flex flex-wrap w-11/12;
+}
+.listEptitle {
+    @apply border-l-2 border-ctRed pl-2 text-lg uppercase font-semibold my-5;
+}
+.ep {
+    @apply bg-ctGrayDark py-3 px-5 rounded-md mr-4 
+    cursor-pointer hover:bg-ctLight hover:text-ctDark
+    transition-all duration-300 ease-in-out;
+}

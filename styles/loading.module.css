@@ -1,0 +1,25 @@
+.spinner {
+    @apply w-20 flex flex-wrap animate-spinning 
+}
+.petal {
+    
+     @apply w-8 h-8 rounded-50 m-1 animate-scaling
+}
+  
+  .p1 {
+    @apply bg-yellow-400 rounded-br-none origin-bottom-right transform
+  }
+  
+  .p2 {
+  
+    @apply bg-pink-400 rounded-bl-none origin-bottom-left transform delay-75
+  }
+  
+  .p3 {
+
+    @apply bg-blue-500 rounded-tr-none origin-top-right transform delay-150
+  }
+  
+  .p4 {
+    @apply bg-red-500 rounded-tl-none origin-top-left transform delay-100
+  }

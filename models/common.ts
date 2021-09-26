@@ -12,3 +12,10 @@ export interface IAnime {
     views:string,
     episode?:string,
 }
+export interface IStateRouter {
+    router:{href:string,name:string}[]
+}
+export interface IAction {
+    type:string,
+    data?:any
+}

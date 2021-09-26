@@ -1,28 +1,25 @@
 import { homeApi } from "../Api/home";
 import Animes from "../components/Animes";
-import Cartoon from "../components/Cartoon";
 import Highlights from "../components/Highlights";
-import NewEspisode from "../components/NewEpisode";
-import Picked from "../components/Picked";
 import { IHomeProps } from "../models";
 interface IProps {
   data: IHomeProps;
 }
 export default function Home({ data }: IProps) {
-  if (!data) return <p>error</p>;
   return (
     <div>
       <Highlights highlights={data?.highlights || []} />
-      <NewEspisode episodes={data?.episodes || []} />
-      <Picked picked={data?.picked || []} />
-      <Animes animes={data?.animes || []} />
-      <Cartoon cartoons={data?.cartoons || []} />
+      <Animes title="Tập mới nhất" animes={data?.episodes || []} />
+      <Animes title="Hôm nay xem gì" animes={data?.picked || []} />
+      <Animes title="Danh sách Anime" animes={data?.animes || []} />
+      {/* <Animes title="Phim hoạt hình" animes={data?.cartoons || []} /> */}
     </div>
   );
 }
+
 export const getStaticProps = async () => {
   const data = await homeApi.getHomePage();
-  console.log(typeof data);
+
   if (typeof data === "function") {
     return {
       props: {
@@ -32,7 +29,7 @@ export const getStaticProps = async () => {
   }
   return {
     props: {
-      data: data || null,
+      data: data || {},
     },
   };
 };

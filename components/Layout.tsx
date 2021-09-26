@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React, { ReactNode, useEffect, useState } from "react";
+import Breadcrumbs from "./Breadcrumbs";
 import Header from "./Header";
 interface IPropType {
   children: ReactNode;
@@ -14,18 +15,24 @@ function Layout({ children }: IPropType) {
       setIsScroll(false);
     }
   };
+  const ev: any = process.browser && addEventListener("scroll", handleScroll);
   useEffect(() => {
     handleScroll();
+    return () => {
+      removeEventListener("scroll", ev);
+    };
   }, []);
 
-  process.browser && addEventListener("scroll", handleScroll);
   return (
     <>
       <Head>
         <title>App Amine sieu cap vip pro</title>
       </Head>
       <Header />
-      <main className="py-11 h-full">
+      <main className=" py-20 h-full">
+        <div>
+          <Breadcrumbs />
+        </div>
         {children}
         <button
           onClick={() =>

@@ -18,7 +18,7 @@ axiosClient.interceptors.response.use(response => {
     if (err?.response?.status === 401) {
         Storage({type:'clear'})  
     }
-    console.log(err.response)
+    
     return {}
 })
 

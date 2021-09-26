@@ -3,9 +3,11 @@ interface ITag {
     tag:string
 }
 export interface IInfoAnime {
-    video:string,
+    video?:string,
     title:string,
     views:string,
     desc:string,
-    genre:ITag[]
+    genre:ITag[],
+    like?:string,
+    follow?:string
 }
